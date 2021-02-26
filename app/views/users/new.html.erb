@@ -1,3 +1,5 @@
+
+<!-- Basic html form  -->
  <!--
  <form action="/users" method="Post" accept-charset="UTF-8">
   <label for="username">Username:</label>
@@ -9,8 +11,10 @@
   <input type="submit" value="Submit"><br><br>
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 </form>
+-->
 
-
+<!-- Rails Form_tag  -->
+<!--
 <%= form_tag("/users", method: "POST") do %>
   <%= label_tag("user[username]", "username:") %>
   <%= text_field_tag("user[username]") %>
@@ -21,6 +25,9 @@
   <%= submit_tag("Submit") %>
 <% end %>
 -->
+
+<!-- Rails Form_with  -->
+
 <%= form_with(model: @user) do |form| %>
   <%= form.label :username, "Username:" %>
   <%= form.text_field :username, placeholder: "put your username"%>
@@ -30,3 +37,4 @@
   <%= form.password_field :password, placeholder: "type your password" %>
   <%= form.submit "Submit" %>
 <% end %>
+
